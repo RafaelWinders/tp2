@@ -14,4 +14,11 @@ use App\Http\Controllers\Admin\DespesasController;
 |
 */
 
-Route::get('/', [DespesasController::class, 'Despesas']);
+
+Route::redirect('/', '/admin/despesas');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('despesas', [DespesasController::class, 'Despesas'])->name('listaDespesas');
+    Route::get('despesas/adicionar', [DespesasController::class, 'formAdicionar'])->name('formAdicionar');
+    Route::post('despesas/adicionar', [DespesasController::class, 'adicionar'])->name('adicionar');
+});

@@ -15,7 +15,7 @@
                                 <div class="card-content white-text">
                                   <span class="card-title">{{$despesa['nome']}}</span>
                                   <p>{{$despesa['valor']}} R$</p>
-                                  <p>{{date('d/m/Y H:i:s', $despesa['data'])}}</p>
+                                  <p>{{$despesa['data']}}</p>
                                 </div>
                                 <div class="card-action">
                                   <a href="#">Editar</a>
@@ -34,6 +34,13 @@
 
 
             @endforelse
+
+            <div class="fixed-action-btn">
+                <a href="{{route('admin.formAdicionar')}}" class="btn-floating btn-large waves-effect aves-light">
+                    <i class="large material-icons">add</i>
+                </a>
+            </div>
+
 
 
 
